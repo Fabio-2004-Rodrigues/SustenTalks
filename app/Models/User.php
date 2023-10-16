@@ -58,14 +58,4 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
-
-    public function publications()
-    {
-        return $this->hasMany('App\Models\Publication');
-    }
-
-    public function likes()
-    {
-        return $this->hasMany(Like::class);
-    }
 }
