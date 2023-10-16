@@ -1,0 +1,94 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+.custom-card {
+    background-color: #fafafa;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.custom-card h5 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.custom-card p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.custom-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.custom-card .btn {
+    margin-bottom: 10px;
+}
+
+.fixed-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    /* Garante que o botão ficará acima de outros elementos da página */
+}
+
+.sidebar {
+    color: #333;
+    padding: 15px;
+    position: fixed;
+    height: 100%;
+    background-color: #F8F9FA;
+}
+
+.sidebar a {
+    color: #333;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+}
+
+.sidebar a i {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.sidebar a span {
+    vertical-align: middle;
+}
+
+.sidebar a:hover {
+    background-color: #eaeaea;
+}
+
+.profile-image {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-decoration: none;
+}
+
+.profile-info span {
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+.btn-hover-green:hover {
+    background-color: green !important;
+    border-color: green !important;
+}
+
+.btn-hover-gray:hover {
+    background-color: lightgray !important;
+    border-color: lightgray !important;
+}
