@@ -1,4 +1,3 @@
-@foreach ($publications as $publication)
     <div class="custom-card rounded px-3">
         <div class="mt-1 mb-3 d-flex justify-content-between align-items-center">
             <div class="card-header profile-info">
@@ -82,4 +81,3 @@
             </div>
         </div>
     </div>
-@endforeach

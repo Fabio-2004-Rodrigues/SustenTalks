@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Publication;
+use Illuminate\Contracts\View\View;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;    
+use Illuminate\Support\Facades\Auth;
 
 class PublicationController extends Controller
 {
@@ -101,5 +102,11 @@ class PublicationController extends Controller
 
             return redirect('/');
         }
+    }
+
+    public function composePublications(View $view)
+    {
+        $publications = Publication::all();
+        $view->with('publications', $publications);
     }
 }
