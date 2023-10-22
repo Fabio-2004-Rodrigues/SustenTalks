@@ -91,3 +91,55 @@
     background-color: lightgray !important;
     border-color: lightgray !important;
 }
+
+@media (max-width: 767px) {
+    .sidebar {
+        position: sticky;
+        top: 0;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 0;
+        padding-right: 0 !important;
+        padding-block: 1rem !important;
+    }
+
+    .sidebar a {
+        margin-top: 0;
+        margin-right: 0;
+        display: inline-block;
+    }
+
+    .sidebar a span {
+        display: none;
+    }
+
+    .icon-row {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        align-items: center;
+        margin-top: 1rem;
+    }
+
+    .sidebar .profile-image {
+        width: 30px;
+        height: auto;
+        border-radius: 50%;
+    }
+
+    .sidebar .logo {
+        width: 100px;
+        height: auto;
+    }
+
+    .friend-suggestions {
+        display: none;
+        /* Esconde as sugestões de amizade */
+    }
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+}

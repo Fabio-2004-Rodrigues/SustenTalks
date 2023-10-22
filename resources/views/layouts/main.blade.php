@@ -21,11 +21,11 @@
     <div class="container-fluid">
         <div class="row justify-content-between">
             <div class="col-md-2">
-                <div class="sidebar justify-content-between d-flex flex-column align-items-start pe-5 py-4">
+                <div class="sidebar d-flex flex-column align-items-center pe-5 py-4">
                     <a href="{{ route('welcome') }}">
-                        <img src="/img/logo/logo.png" alt="logo SustenTalks" style="width: 150px; height: auto">
+                        <img src="/img/logo/logo.png" alt="logo SustenTalks" class="logo">
                     </a>
-                    <div>
+                    <div class="icon-row">
                         <a href="{{ route('dashboard') }}" class="text-decoration-none">
                             <div class="profile-info">
                                 @if (Auth::user()->user_image)
@@ -47,10 +47,10 @@
                         <a href="{{ route('publications.create') }}" class="btn w-100 text-start">
                             <i class="bi bi-plus-square"></i> <span>Criar</span>
                         </a>
+                        <a href="{{ route('profile.show') }}" class="btn w-100 text-start m-0">
+                            <i class="bi bi-gear"></i> <span>Configurações</span>
+                        </a>
                     </div>
-                    <a href="{{ route('profile.show') }}" class="btn w-100 text-start m-0">
-                        <i class="bi bi-gear"></i> <span>Configurações</span>
-                    </a>
                 </div>
             </div>
             <div class="col-md-10">

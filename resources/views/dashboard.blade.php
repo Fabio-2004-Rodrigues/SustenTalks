@@ -2,7 +2,7 @@
     @if (Auth::user())
         <div class="container-xxl">
             <div class="row h-100 d-flex flex-col align-content-center my-4">
-                <div class="col-7">
+                <div class="col-lg-7 col-md-8 col-sm-10 col-12">
                     <div class="d-flex flex-row align-items-center mb-4">
                         @if (Auth::user()->user_image)
                             <img src="{{ Auth::user()->user_image }}" alt="{{ Auth::user()->name }}">

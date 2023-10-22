@@ -12,7 +12,7 @@
             @endforeach
         </div>
 
-        <div class="col-md-2">
+        <div class="col-md-2 friend-suggestions">
             @php
                 $users = \App\Models\User::all();
             @endphp
