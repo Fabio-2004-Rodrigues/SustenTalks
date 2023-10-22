@@ -41,14 +41,14 @@
                         <a href="{{ route('welcome') }}" class="btn w-100 text-start">
                             <i class="bi bi-house"></i> <span>Página Inicial</span>
                         </a>
-                        <a href="{{ route('publications.create') }}" class="btn w-100 text-start">
+                        <a href="#" class="btn w-100 text-start">
                             <i class="bi bi-search"></i> <span>Pesquisar</span>
                         </a>
                         <a href="{{ route('publications.create') }}" class="btn w-100 text-start">
                             <i class="bi bi-plus-square"></i> <span>Criar</span>
                         </a>
                     </div>
-                    <a href="{{ route('publications.create') }}" class="btn w-100 text-start m-0">
+                    <a href="{{ route('profile.show') }}" class="btn w-100 text-start m-0">
                         <i class="bi bi-gear"></i> <span>Configurações</span>
                     </a>
                 </div>

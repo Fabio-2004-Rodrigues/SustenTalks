@@ -7,6 +7,7 @@ use App\Http\Requests\StoreCommentRequest;
 use App\Http\Requests\UpdateCommentRequest;
 use App\Models\Publication;
 use Illuminate\Http\Request;
+use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Auth;
 
 class CommentController extends Controller
@@ -32,5 +33,14 @@ class CommentController extends Controller
     {
         $comment->delete();
         return redirect()->back();
+    }
+
+    public function composeComments(View $view)
+    {
+        $user = Auth::user();
+        $commentedPublicationsIds = $user->comments->pluck('publication_id')->unique();
+        $commentedPublications = Publication::whereIn('id', $commentedPublicationsIds)->get();
+
+        $view->with('commentedPublications', $commentedPublications);
     }
 }

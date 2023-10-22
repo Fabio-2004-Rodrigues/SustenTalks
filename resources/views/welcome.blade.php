@@ -6,8 +6,10 @@
 
     <div class="row justify-content-evenly my-4">
         <div class="col-md-5 row-gap-4 d-flex flex-column">
-            @component('components.publication', ['publications' => $publications])
-            @endcomponent
+            @foreach ($publications as $publication)
+                @component('components.publication', ['publication' => $publication])
+                @endcomponent
+            @endforeach
         </div>
 
         <div class="col-md-2">

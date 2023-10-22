@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Contracts\View\View;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\URL;
 
@@ -23,5 +24,8 @@ class AppServiceProvider extends ServiceProvider
         if (env('APP_ENV') !== 'local') {
             URL::forceScheme('https');
         }
+
+        view()->composer(['welcome', 'dashboard'], 'App\Http\Controllers\PublicationController@composePublications');
+        view()->composer(['dashboard'], 'App\Http\Controllers\CommentController@composeComments');
     }
 }
