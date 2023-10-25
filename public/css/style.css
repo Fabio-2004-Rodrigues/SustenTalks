@@ -92,7 +92,23 @@
     border-color: lightgray !important;
 }
 
-@media (max-width: 767px) {
+@media screen and (min-width: 767px) {
+    .hide-perfil-mobile {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .friend-suggestions {
+        display: none;
+    }
+
+    .feed-mobile {
+        justify-content: center !important;
+    }
+}
+
+@media screen and (max-width: 767px) {
     .sidebar {
         position: sticky;
         top: 0;
@@ -102,6 +118,10 @@
         padding: 0;
         padding-right: 0 !important;
         padding-block: 1rem !important;
+    }
+
+    .feed-mobile {
+        margin-inline: 1rem;
     }
 
     .sidebar a {
@@ -114,6 +134,10 @@
         display: none;
     }
 
+    .hide-perfil-desktop {
+        display: none;
+    }
+
     .icon-row {
         display: flex;
         flex-direction: row;
@@ -123,7 +147,7 @@
     }
 
     .sidebar .profile-image {
-        width: 30px;
+        width: 35px;
         height: auto;
         border-radius: 50%;
     }
@@ -135,7 +159,6 @@
 
     .friend-suggestions {
         display: none;
-        /* Esconde as sugestões de amizade */
     }
 }
 
