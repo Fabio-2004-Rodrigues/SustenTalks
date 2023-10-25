@@ -26,28 +26,44 @@
                         <img src="/img/logo/logo.png" alt="logo SustenTalks" class="logo">
                     </a>
                     <div class="icon-row">
-                        <a href="{{ route('dashboard') }}" class="text-decoration-none">
-                            <div class="profile-info">
-                                @if (Auth::user()->user_image)
-                                    <img src="{{ Auth::user()->user_image }}" alt="{{ Auth::user()->name }}"
-                                        class="profile-image">
-                                @else
-                                    <img src="/img/profile/default.jpg" alt="{{ Auth::user()->name }}"
-                                        class="profile-image">
-                                @endif
-                                <span class="ms-3">{{ Auth::user()->name }}</span>
-                            </div>
-                        </a>
+                        <div class="hide-perfil-desktop">
+                            <a href="{{ route('dashboard') }}" class="text-decoration-none">
+                                <div class="profile-info">
+                                    @if (Auth::user()->user_image)
+                                        <img src="{{ Auth::user()->user_image }}" alt="{{ Auth::user()->name }}"
+                                            class="profile-image">
+                                    @else
+                                        <img src="/img/profile/default.jpg" alt="{{ Auth::user()->name }}"
+                                            class="profile-image">
+                                    @endif
+                                    <span class="ms-3">{{ Auth::user()->name }}</span>
+                                </div>
+                            </a>
+                        </div>
                         <a href="{{ route('welcome') }}" class="btn w-100 text-start">
                             <i class="bi bi-house"></i> <span>Página Inicial</span>
-                        </a>
-                        <a href="#" class="btn w-100 text-start">
-                            <i class="bi bi-search"></i> <span>Pesquisar</span>
                         </a>
                         <a href="{{ route('publications.create') }}" class="btn w-100 text-start">
                             <i class="bi bi-plus-square"></i> <span>Criar</span>
                         </a>
-                        <a href="{{ route('profile.show') }}" class="btn w-100 text-start m-0">
+                        <div class="hide-perfil-mobile">
+                            <a href="{{ route('dashboard') }}" class="text-decoration-none">
+                                <div class="profile-info">
+                                    @if (Auth::user()->user_image)
+                                        <img src="{{ Auth::user()->user_image }}" alt="{{ Auth::user()->name }}"
+                                            class="profile-image">
+                                    @else
+                                        <img src="/img/profile/default.jpg" alt="{{ Auth::user()->name }}"
+                                            class="profile-image">
+                                    @endif
+                                    <span class="ms-3">{{ Auth::user()->name }}</span>
+                                </div>
+                            </a>
+                        </div>
+                        <a href="#" class="btn w-100 text-start">
+                            <i class="bi bi-search"></i> <span>Pesquisar</span>
+                        </a>
+                        <a href="{{ route('profile.show') }}" class="btn w-100 text-start">
                             <i class="bi bi-gear"></i> <span>Configurações</span>
                         </a>
                     </div>

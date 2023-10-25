@@ -4,8 +4,8 @@
 
 @section('content')
 
-    <div class="row justify-content-evenly my-4">
-        <div class="col-md-5 row-gap-4 d-flex flex-column">
+    <div class="row justify-content-evenly my-4 feed-mobile">
+        <div class="col-md-7 col-lg-5 row-gap-4 d-flex flex-column">
             @foreach ($publications as $publication)
                 @component('components.publication', ['publication' => $publication])
                 @endcomponent
