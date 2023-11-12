@@ -14,17 +14,42 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+
+    <!-- Scripts -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <script src="/js/script.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" defer></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous" defer>
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" defer></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" defer></script>
+
+    <!-- Styles -->
+    @livewireStyles
 
 </head>
 
 <body>
     <div class="container-fluid">
         <div class="row justify-content-between">
-            <div class="col-md-2">
-                <div class="sidebar d-flex flex-column align-items-center pe-5 py-4">
-                    <a href="{{ route('welcome') }}">
-                        <img src="/img/logo/logo.png" alt="logo SustenTalks" class="logo">
-                    </a>
+            <div class="col-md-3 p-0">
+                <div class="sidebar d-flex flex-column justify-content-between px-4 py-4">
+                    <div class="justify-content-center d-flex">
+                        <a href="{{ route('welcome') }}">
+                            <img src="/img/logo/logo.png" alt="logo SustenTalks" class="logo">
+                            <img src="/img/logo/logo_mobile.png" alt="logo SustenTalks" class="logo-mobile">
+                        </a>
+                    </div>
                     <div class="icon-row">
                         <div class="hide-perfil-desktop">
                             <a href="{{ route('dashboard') }}" class="text-decoration-none">
@@ -40,10 +65,10 @@
                                 </div>
                             </a>
                         </div>
-                        <a href="{{ route('welcome') }}" class="btn w-100 text-start">
+                        <a href="{{ route('welcome') }}" class="btn text-start">
                             <i class="bi bi-house"></i> <span>Página Inicial</span>
                         </a>
-                        <a href="{{ route('publications.create') }}" class="btn w-100 text-start">
+                        <a href="{{ route('publications.create') }}" class="btn text-start">
                             <i class="bi bi-plus-square"></i> <span>Criar</span>
                         </a>
                         <div class="hide-perfil-mobile">
@@ -60,30 +85,23 @@
                                 </div>
                             </a>
                         </div>
-                        <a href="#" class="btn w-100 text-start">
+                        <a href="#" class="btn text-start">
                             <i class="bi bi-search"></i> <span>Pesquisar</span>
                         </a>
-                        <a href="{{ route('profile.show') }}" class="btn w-100 text-start">
+                        <a href="{{ route('profile.show') }}" class="btn text-start config-mobile">
+                            <i class="bi bi-gear"></i> <span>Configurações</span>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="{{ route('profile.show') }}" class="btn text-start config">
                             <i class="bi bi-gear"></i> <span>Configurações</span>
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-10">
-                @yield('content')
-            </div>
+            @yield('content')
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
-    </script>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="/js/script.js"></script>
-
 </body>
 
 </html>
