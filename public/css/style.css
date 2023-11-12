@@ -2,6 +2,8 @@
     font-family: 'Roboto', 'Source Sans Pro', sans-serif;
 }
 
+
+
 .custom-card {
     background-color: #fafafa;
     border: 1px solid #ccc;
@@ -36,9 +38,9 @@
 
 .sidebar {
     color: #333;
-    padding: 15px;
+    height: 100vh;
+    width: 25%;
     position: fixed;
-    height: 100%;
     background-color: #F8F9FA;
 }
 
@@ -92,31 +94,55 @@
     border-color: lightgray !important;
 }
 
+.config-mobile {
+    display: none !important;
+}
+
+.logo {
+    display: block;
+    width: 130px;
+    height: auto;
+}
+
+.logo-mobile {
+    display: none;
+}
+
+.btn-custom {
+    background-color: #7cd5a7;
+    color: black;
+}
+
 @media screen and (min-width: 767px) {
     .hide-perfil-mobile {
         display: none;
     }
 }
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 960px) {
     .friend-suggestions {
         display: none;
     }
 
     .feed-mobile {
-        justify-content: center !important;
+        justify-content: stretch !important;
     }
 }
 
 @media screen and (max-width: 767px) {
+
+    .config-mobile {
+        display: block !important;
+    }
+
+    .config {
+        display: none !important;
+    }
+
     .sidebar {
         position: sticky;
-        top: 0;
-        flex-direction: column;
-        align-items: center;
         height: auto;
-        padding: 0;
-        padding-right: 0 !important;
+        width: auto;
         padding-block: 1rem !important;
     }
 
@@ -141,7 +167,7 @@
     .icon-row {
         display: flex;
         flex-direction: row;
-        gap: 2rem;
+        justify-content: space-between;
         align-items: center;
         margin-top: 1rem;
     }
@@ -152,17 +178,17 @@
         border-radius: 50%;
     }
 
-    .sidebar .logo {
-        width: 100px;
+    .logo {
+        display: none;
+    }
+
+    .logo-mobile {
+        display: block;
+        width: 180px;
         height: auto;
     }
 
     .friend-suggestions {
         display: none;
     }
-}
-
-.logo {
-    width: 150px;
-    height: auto;
 }
