@@ -3,7 +3,7 @@
 @section('title', 'Feed')
 
 @section('content')
-    <div class="col-md-7 col-lg-5 row-gap-4 d-flex flex-column my-4">
+    <div class="co  l-md-7 col-lg-5 row-gap-4 d-flex flex-column my-4">
         @php
             $sortedPublications = $publications->sortByDesc('created_at');
         @endphp
