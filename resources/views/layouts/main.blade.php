@@ -85,17 +85,28 @@
                                 </div>
                             </a>
                         </div>
-                        <a href="#" class="btn text-start">
+                        {{-- <a href="#" class="btn text-start">
                             <i class="bi bi-search"></i> <span>Pesquisar</span>
-                        </a>
-                        <a href="{{ route('profile.show') }}" class="btn text-start config-mobile">
+                        </a> --}}
+                        <a href="{{ route('profile.show') }}" class="btn text-start">
                             <i class="bi bi-gear"></i> <span>Configurações</span>
                         </a>
+                        <form method="POST" action="{{ route('logout') }}" x-data>
+                            @csrf
+                            <a class="btn text-start config-mobile" href="{{ route('logout') }}"
+                                @click.prevent="$root.submit();">
+                                <i class="bi bi-box-arrow-right"><span>{{ __('Sair') }}</span></i>
+                            </a>
+                        </form>
                     </div>
                     <div>
-                        <a href="{{ route('profile.show') }}" class="btn text-start config">
-                            <i class="bi bi-gear"></i> <span>Configurações</span>
-                        </a>
+                        <form method="POST" action="{{ route('logout') }}" x-data>
+                            @csrf
+                            <a class="btn text-start config" href="{{ route('logout') }}"
+                                @click.prevent="$root.submit();">
+                                <i class="bi bi-box-arrow-right"></i> <span>Sair</span>
+                            </a>
+                        </form>
                     </div>
                 </div>
             </div>
