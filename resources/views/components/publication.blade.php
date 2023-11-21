@@ -1,5 +1,5 @@
     <div class="custom-card rounded px-3">
-        <div class="mt-1 mb-3 d-flex justify-content-between align-items-center">
+        <div class="mt-1 d-flex justify-content-between align-items-center">
             <div class="card-header profile-info">
                 @if ($publication->user->user_image)
                     <img src="{{ $publication->user->user_image }}" alt="{{ $publication->user->name }}"
@@ -10,16 +10,24 @@
                 <h5 class="card-title ms-3">{{ $publication->user->name }}</h5>
             </div>
             @if (Auth::id() == $publication->user_id)
-                <div class="text-center">
-                    <form action="{{ url('/publications/' . $publication->id) }}" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger py-2 px-3 btn-sm">Apagar</button>
-                    </form>
+                <div class="dropup text-center">
+                    <button class="btn btn-sm btn-link text-dark" type="button" id="dropdownMenuButton"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-three-dots-vertical"></i>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <li>
+                            <form action="{{ url('/publications/' . $publication->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="dropdown-item text-danger">Apagar</button>
+                            </form>
+                        </li>
+                    </ul>
                 </div>
             @endif
         </div>
-        <div class="card-body">
+        <div class="card-body my-4">
             @if ($publication->description)
                 <p>{{ $publication->description }}</p>
             @endif
@@ -28,7 +36,7 @@
                     alt="{{ $publication->description }}" class="img-fluid">
             @endif
         </div>
-        @if ($publication->likes->count() > 0 || $publication->likes->count() > 0)
+        @if ($publication->likes->count() > 0 || $publication->comments->count() > 0)
             <div class="d-flex justify-content-between py-2 px-2 mb-4 border-top border-bottom">
                 <div>
                     @if ($publication->likes->count() > 0)
@@ -74,10 +82,10 @@
                         <i class="me-2 fas fa-comment"></i> Comentar
                     </a>
                 </div>
-                <div class="text-center">
+                {{-- <div class="text-center">
                     <button class="py-2 px-3 btn btn-outline-secondary btn-sm"><i class="me-2 fas fa-share"></i>
                         Compartilhar</button>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

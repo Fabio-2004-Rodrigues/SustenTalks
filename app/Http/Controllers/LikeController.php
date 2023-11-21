@@ -6,6 +6,7 @@ use App\Models\Like;
 use App\Models\Publication;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Contracts\View\View;
 
 class LikeController extends Controller
 {
@@ -30,5 +31,18 @@ class LikeController extends Controller
         }
 
         return redirect()->back();
+    }
+
+    public function composeLikes(View $view)
+    {
+        if (Auth::check()) {
+            $user = Auth::user();
+            $likedPublicationsIds = $user->likes->pluck('publication_id')->unique();
+            $likedPublications = Publication::whereIn('id', $likedPublicationsIds)->get();
+
+            $view->with('likedPublications', $likedPublications);
+        } else {
+            $view->with('likedPublications', collect());
+        }
     }
 }

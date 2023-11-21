@@ -109,8 +109,8 @@
 }
 
 .btn-custom {
-    background-color: #7cd5a7;
-    color: black;
+    background-color: #7cd5a7 !important;
+    color: black !important;
 }
 
 @media screen and (min-width: 767px) {
@@ -191,4 +191,9 @@
     .friend-suggestions {
         display: none;
     }
+
+    .btn-link.dropdown-toggle::after {
+        display: none;
+    }
+
 }
