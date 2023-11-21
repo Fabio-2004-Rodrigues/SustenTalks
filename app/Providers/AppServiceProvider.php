@@ -27,7 +27,6 @@ class AppServiceProvider extends ServiceProvider
 
         view()->composer(['welcome', 'dashboard'], 'App\Http\Controllers\PublicationController@composePublications');
         view()->composer(['dashboard'], 'App\Http\Controllers\CommentController@composeComments');
-        view()->composer('welcome', 'App\Http\Controllers\FollowerController@composeFollowers');
         view()->composer('dashboard', 'App\Http\Controllers\LikeController@composeLikes');
     }
 }
